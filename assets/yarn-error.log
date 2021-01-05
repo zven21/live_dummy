@@ -1,0 +1,58 @@
+Arguments: 
+  /Users/zven/.asdf/installs/nodejs/15.2.0/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js
+
+PATH: 
+  /Users/zven/.asdf/installs/nodejs/15.2.0/bin:/Users/zven/.asdf/installs/nodejs/15.2.0/.npm/bin:/Users/zven/.asdf/shims:/Users/zven/.asdf/bin:/usr/local/opt/gnu-getopt/bin:/Users/zven/.emacs.d/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.2.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.npmjs.org/nprogress: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:141409:19)
+      at listOnTimeout (node:internal/timers:556:17)
+      at processTimers (node:internal/timers:499:7)
+
+npm manifest: 
+  {
+    "repository": {},
+    "description": " ",
+    "license": "MIT",
+    "scripts": {
+      "deploy": "webpack --mode production",
+      "watch": "webpack --mode development --watch"
+    },
+    "dependencies": {
+      "phoenix": "file:../deps/phoenix",
+      "phoenix_html": "file:../deps/phoenix_html",
+      "phoenix_live_view": "file:../deps/phoenix_live_view",
+      "nprogress": "^0.2.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.0.0",
+      "@babel/preset-env": "^7.0.0",
+      "babel-loader": "^8.0.0",
+      "copy-webpack-plugin": "^5.1.1",
+      "css-loader": "^3.4.2",
+      "sass-loader": "^8.0.2",
+      "node-sass": "^4.13.1",
+      "hard-source-webpack-plugin": "^0.13.1",
+      "mini-css-extract-plugin": "^0.9.0",
+      "optimize-css-assets-webpack-plugin": "^5.0.1",
+      "terser-webpack-plugin": "^2.3.2",
+      "webpack": "4.41.5",
+      "webpack-cli": "^3.3.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
