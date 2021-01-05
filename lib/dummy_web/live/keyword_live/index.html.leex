@@ -1,0 +1,40 @@
+<h1><%= @page_title %></h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, DummyWeb.KeywordLive.FormComponent,
+    id: @keyword.id || :new,
+    title: @page_title,
+    action: @live_action,
+    keyword: @keyword,
+    return_to: Routes.keyword_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>State</th>
+      <th>Pub date</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="keywords">
+    <%= for keyword <- @keywords do %>
+      <tr id="keyword-<%= keyword.id %>">
+        <td><%= keyword.keyword %></td>
+        <td><%= keyword.state %></td>
+        <td><%= keyword.pub_date %></td>
+
+        <td>
+          <span><%= live_redirect "详情", to: Routes.keyword_show_path(@socket, :show, keyword) %></span>
+          <span><%= live_patch "编辑", to: Routes.keyword_index_path(@socket, :edit, keyword) %></span>
+          <span><%= link "删除", to: "#", phx_click: "delete", phx_value_id: keyword.id, data: [confirm: "Are you sure?"] %></span>
+          <span><%= link "改变状态", to: "#", phx_click: "change_state", phx_value_id: keyword.id %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Keyword", to: Routes.keyword_index_path(@socket, :new) %></span>
